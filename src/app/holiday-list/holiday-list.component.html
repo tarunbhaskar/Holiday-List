@@ -1,0 +1,26 @@
+<div>
+    <ul class="nav nav-pills">
+        <li class="holiday-list">Holiday List -Year 2015</li>
+    </ul>
+    <table class="table table-striped show-list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Month</th>
+                <th>Observed on date</th>
+                <th>Date</th>
+                <th>Public Holiday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let holiday of _holidayList" >
+            <td (click)="displayList(holiday)" class="detail">{{holiday.name}}</td>
+                <td>{{holiday.date | date: "MMMM"}}</td>
+                 <td>{{holiday.observed | date: "dd"}}</td>
+                <td>{{holiday.date}}</td>
+               
+                <td>{{holiday.public ? "Yes" : "No"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
